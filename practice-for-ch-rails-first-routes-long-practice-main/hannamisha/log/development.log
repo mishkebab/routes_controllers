@@ -58,3 +58,237 @@ Processing by UsersController#index as */*
 Completed 200 OK in 13ms (Views: 12.7ms | Allocations: 1310)
 
 
+Started GET "/users" for ::1 at 2023-05-03 14:55:45 -0700
+Processing by UsersController#index as */*
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 6ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 1394)
+
+
+Started GET "/users?fav_food=pizza" for ::1 at 2023-05-03 14:56:42 -0700
+Processing by UsersController#index as */*
+  Parameters: {"fav_food"=>"pizza"}
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 174)
+
+
+Started GET "/users?admin=true" for ::1 at 2023-05-03 14:57:06 -0700
+Processing by UsersController#index as */*
+  Parameters: {"admin"=>"true"}
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 150)
+
+
+Started POST "/users?admin=true" for ::1 at 2023-05-03 14:58:01 -0700
+
+AbstractController::ActionNotFound - The action 'create' could not be found for UsersController:
+
+Started POST "/users?admin=true" for ::1 at 2023-05-03 14:59:12 -0700
+Processing by UsersController#create as */*
+  Parameters: {"hanna"=>"darwish", "admin"=>"true"}
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms | Allocations: 263)
+
+
+Started POST "/users" for ::1 at 2023-05-03 14:59:22 -0700
+Processing by UsersController#create as */*
+  Parameters: {"hanna"=>"darwish"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 112)
+
+
+Started POST "/users" for ::1 at 2023-05-03 14:59:38 -0700
+Processing by UsersController#create as */*
+  Parameters: {"hanna"=>"darwish", "misha"=>"bansal"}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 119)
+
+
+Started POST "/users/2" for ::1 at 2023-05-03 15:02:16 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/users/2"):
+  
+Started GET "/users/2" for ::1 at 2023-05-03 15:02:20 -0700
+
+AbstractController::ActionNotFound - The action 'show' could not be found for UsersController:
+
+Started GET "/users/2" for ::1 at 2023-05-03 15:02:43 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 211)
+
+
+Started GET "/users/" for ::1 at 2023-05-03 15:06:22 -0700
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"hanna"=>"darwish", "misha"=>"bansal"}, "paulo"=>"b"}
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 8)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started GET "/users/" for ::1 at 2023-05-03 15:06:53 -0700
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"hanna"=>"darwish"}, "student"=>{"misha"=>"bansal"}, "paulo"=>"b"}
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 160)
+
+
+Started GET "/users/" for ::1 at 2023-05-03 15:07:06 -0700
+Processing by UsersController#index as */*
+  Parameters: {"fruit"=>{"hanna"=>"darwish"}, "student"=>{"misha"=>"bansal"}, "paulo"=>"b"}
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/users/" for ::1 at 2023-05-03 15:08:35 -0700
+Processing by UsersController#index as */*
+  Parameters: {"fruit"=>{"hanna"=>"darwish"}, "student"=>{"misha"=>"bansal"}, "hanna"=>{"banana"=>"girl"}}
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 1ms (Views: 0.4ms | Allocations: 145)
+
+
+Started GET "/users/" for ::1 at 2023-05-03 15:09:03 -0700
+
+ActionController::BadRequest - Invalid request parameters: expected Hash (got String) for param `hanna':
+
+Started GET "/users/" for ::1 at 2023-05-03 15:10:07 -0700
+
+ActionController::BadRequest - Invalid request parameters: expected Hash (got String) for param `hanna':
+
+Started GET "/users/" for ::1 at 2023-05-03 15:11:16 -0700
+Processing by UsersController#index as */*
+  Parameters: {"student"=>{"misha"=>"bansal"}, "fruit"=>{"hanna"=>{"banana"=>"girl"}}}
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 1ms (Views: 1.0ms | Allocations: 145)
+
+
+  [1m[35m (21.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4057124708657805225)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230503221328)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230503221328"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-05-03 22:14:44.100854"], ["updated_at", "2023-05-03 22:14:44.100854"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4057124708657805225)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (2.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "hanna"], ["email", "hanna@gmail.com"], ["created_at", "2023-05-03 22:23:57.021584"], ["updated_at", "2023-05-03 22:23:57.021584"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "misha"], ["email", "misha@gmail.com"], ["created_at", "2023-05-03 22:24:25.933378"], ["updated_at", "2023-05-03 22:24:25.933378"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "thomas"], ["email", "thomas@gmail.com"], ["created_at", "2023-05-03 22:24:54.305785"], ["updated_at", "2023-05-03 22:24:54.305785"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/users/" for ::1 at 2023-05-03 15:26:54 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 18ms (Views: 10.2ms | ActiveRecord: 4.8ms | Allocations: 6316)
+
+
+Started POST "/users/" for ::1 at 2023-05-03 15:32:43 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"\"name\""=>"\"paulo\"", "\"email\""=>"\"paulo@gmail.com\""}}
+Completed 422 Unprocessable Entity in 19ms (Views: 0.3ms | ActiveRecord: 3.2ms | Allocations: 5900)
+
+
+Started POST "/users/" for ::1 at 2023-05-03 15:33:13 -0700
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"\"paulo\"", "email"=>"\"paulo@gmail.com\""}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "\"paulo\""], ["email", "\"paulo@gmail.com\""], ["created_at", "2023-05-03 22:33:13.612338"], ["updated_at", "2023-05-03 22:33:13.612338"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 2.9ms | Allocations: 3275)
+
+
+Started POST "/users/" for ::1 at 2023-05-03 15:36:00 -0700
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"\"chris\"", "email"=>"\"chris@gmail.com\""}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms | Allocations: 1182)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/users_controller.rb:17:in `user_params'
+  app/controllers/users_controller.rb:8:in `create'
+
+Started POST "/users/" for ::1 at 2023-05-03 15:36:22 -0700
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"\"chris\"", "email"=>"\"chris@gmail.com\""}
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms | Allocations: 1138)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: users:
+  app/controllers/users_controller.rb:17:in `user_params'
+  app/controllers/users_controller.rb:8:in `create'
+
+Started POST "/users/" for ::1 at 2023-05-03 15:37:36 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"\"chris\"", "email"=>"\"chris@gmail.com\""}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "\"chris\""], ["email", "\"chris@gmail.com\""], ["created_at", "2023-05-03 22:37:36.753105"], ["updated_at", "2023-05-03 22:37:36.753105"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 18ms (Views: 0.6ms | ActiveRecord: 5.0ms | Allocations: 4556)
+
+
+Started POST "/users/" for ::1 at 2023-05-03 15:38:45 -0700
+Processing by UsersController#create as */*
+  Parameters: {"banana"=>{"name"=>"\"rohan\"", "email"=>"\"rohan@gmail.com\""}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "\"rohan\""], ["email", "\"rohan@gmail.com\""], ["created_at", "2023-05-03 22:38:45.588508"], ["updated_at", "2023-05-03 22:38:45.588508"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 21ms (Views: 0.5ms | ActiveRecord: 5.8ms | Allocations: 4507)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/users/" for ::1 at 2023-05-03 15:39:30 -0700
+Processing by UsersController#create as */*
+  Parameters: {"banana"=>{"name"=>"lauren", "email"=>"lauren@gmail.com"}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "lauren"], ["email", "lauren@gmail.com"], ["created_at", "2023-05-03 22:39:30.686636"], ["updated_at", "2023-05-03 22:39:30.686636"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 1.6ms | Allocations: 1944)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/users/" for ::1 at 2023-05-03 15:40:28 -0700
+Processing by UsersController#create as */*
+  Parameters: {"banana"=>{"name"=>"kenny", "email"=>"kenny@gmail.com", "course_id"=>"ruby_101"}}
+[31mUnpermitted parameter: :course_id. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x000000010d10ac58>, params: {"banana"=>{"name"=>"kenny", "email"=>"kenny@gmail.com", "course_id"=>"ruby_101"}, "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "kenny"], ["email", "kenny@gmail.com"], ["created_at", "2023-05-03 22:40:28.542876"], ["updated_at", "2023-05-03 22:40:28.542876"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 1.4ms | Allocations: 2018)
+
+
