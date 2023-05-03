@@ -1,2 +1,60 @@
   [1m[35m (168.5ms)[0m  [1m[35mCREATE DATABASE "hannamisha_development" ENCODING = 'unicode'[0m
   [1m[35m (85.3ms)[0m  [1m[35mCREATE DATABASE "hannamisha_test" ENCODING = 'unicode'[0m
+Started GET "/users" for ::1 at 2023-05-03 14:32:02 -0700
+
+ActiveRecord::NoDatabaseError - We could not find your database: hannamisha_development. Which can be found in the database configuration file located at config/database.yml.
+To resolve this issue:
+- Did you create the database for this app, or delete it? You may need to create your database.
+- Has the database name changed? Check your database.yml config has the correct database name.
+To create your database, run:
+        bin/rails db:create:
+
+  [1m[35m (112.9ms)[0m  [1m[35mCREATE DATABASE "hannamisha_development" ENCODING = 'unicode'[0m
+  [1m[35m (49.3ms)[0m  [1m[35mCREATE DATABASE "hannamisha_test" ENCODING = 'unicode'[0m
+Started GET "/users" for ::1 at 2023-05-03 14:32:36 -0700
+
+AbstractController::ActionNotFound - The action 'index' could not be found for UsersController:
+
+Started GET "/users" for ::1 at 2023-05-03 14:39:01 -0700
+Processing by UsersController#index as */*
+No template found for UsersController#index, rendering head :no_content
+Completed 204 No Content in 0ms (Allocations: 269)
+
+
+Started GET "/users" for ::1 at 2023-05-03 14:39:41 -0700
+Processing by UsersController#index as */*
+No template found for UsersController#index, rendering head :no_content
+Completed 204 No Content in 0ms (Allocations: 81)
+
+
+Started GET "/users" for ::1 at 2023-05-03 14:39:50 -0700
+Processing by UsersController#index as HTML
+Completed 406 Not Acceptable in 1ms (Allocations: 698)
+
+
+
+ActionController::MissingExactTemplate - UsersController#index is missing a template for request formats: text/html:
+
+Started POST "/__better_errors/a6a44c2e8380382e/variables" for ::1 at 2023-05-03 14:39:50 -0700
+Started GET "/users" for ::1 at 2023-05-03 14:40:18 -0700
+Processing by UsersController#index as */*
+No template found for UsersController#index, rendering head :no_content
+Completed 204 No Content in 1ms (Allocations: 98)
+
+
+Started GET "/users" for ::1 at 2023-05-03 14:40:24 -0700
+Processing by UsersController#index as HTML
+Completed 406 Not Acceptable in 1ms (Allocations: 616)
+
+
+
+ActionController::MissingExactTemplate - UsersController#index is missing a template for request formats: text/html:
+
+Started POST "/__better_errors/a7d37dc856e46684/variables" for ::1 at 2023-05-03 14:40:24 -0700
+Started GET "/users" for ::1 at 2023-05-03 14:41:30 -0700
+Processing by UsersController#index as */*
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 13ms (Views: 12.7ms | Allocations: 1310)
+
+
