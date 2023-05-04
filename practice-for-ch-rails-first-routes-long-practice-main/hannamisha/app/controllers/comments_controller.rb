@@ -6,7 +6,6 @@ class CommentsController < ApplicationController
         else
             @comments = Comment.comments_for_artwork_id(params[:artwork_id])
             render json: @comments
-            
         end
     end
 

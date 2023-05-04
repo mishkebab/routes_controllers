@@ -32,4 +32,10 @@ class User < ApplicationRecord
     dependent: :destroy,
     inverse_of: :author
 
+    def self.query(name)
+        User
+            .select('users.*')
+            .where('users.username = ?', name)
+    end 
 end 
+

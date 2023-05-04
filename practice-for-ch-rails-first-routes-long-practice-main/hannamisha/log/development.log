@@ -1920,3 +1920,38 @@ Processing by CommentsController#index as */*
 Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.5ms | Allocations: 1020)
 
 
+Started GET "/users" for ::1 at 2023-05-04 14:43:22 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"hanna"}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 6933)
+
+
+
+NoMethodError - undefined method `query' for User:Class
+Did you mean?  to_query:
+  app/controllers/users_controller.rb:4:in `index'
+
+Started GET "/users" for ::1 at 2023-05-04 14:43:45 -0700
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"hanna"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT users.* FROM "users" WHERE (users.username = 'hanna')[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+Completed 200 OK in 23ms (Views: 10.0ms | ActiveRecord: 6.2ms | Allocations: 6513)
+
+
+Started GET "/users" for ::1 at 2023-05-04 14:44:00 -0700
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"misha"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT users.* FROM "users" WHERE (users.username = 'misha')[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+Completed 200 OK in 14ms (Views: 4.8ms | ActiveRecord: 2.2ms | Allocations: 943)
+
+
+Started GET "/users" for ::1 at 2023-05-04 14:44:02 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 1041)
+
+
