@@ -31,4 +31,6 @@ class Comment < ApplicationRecord
         .joins(:artwork)
         .where("artworks.id = ?", artwork_id)
   end
+
+  has_many :likes, as: :likeable
 end

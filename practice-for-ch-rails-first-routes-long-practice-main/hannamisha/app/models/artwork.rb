@@ -40,4 +40,6 @@ class Artwork < ApplicationRecord
             .where("users.id = ?", user_id)
     end
 
+    has_many :likes, as: :likeable
+
 end 
