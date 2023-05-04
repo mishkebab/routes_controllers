@@ -34,3 +34,8 @@ ArtworkShare.create(artwork_id: 1, viewer_id: 2)
 ArtworkShare.create(artwork_id: 2, viewer_id: 1)
 ArtworkShare.create(artwork_id: 3, viewer_id: 4)
 ArtworkShare.create(artwork_id: 1, viewer_id: 3)
+
+Comment.create(body: "i dont get the hype", artwork_id: 1, author_id: 4)
+Comment.create(body: "FIRST", artwork_id: 1, author_id: 2)
+Comment.create(body: "bananas slap", artwork_id: 3, author_id: 2)
+Comment.create(body: "she's a beaut", artwork_id: 2, author_id: 1)
