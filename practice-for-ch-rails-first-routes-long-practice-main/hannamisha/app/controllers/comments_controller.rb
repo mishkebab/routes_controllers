@@ -1,5 +1,14 @@
 class CommentsController < ApplicationController
-
+    def index
+        if params[:user_id]
+            @comments = Comment.comments_for_user_id(params[:user_id])
+            render json: @comments
+        else
+            @comments = Comment.comments_for_artwork_id(params[:artwork_id])
+            render json: @comments
+            
+        end
+    end
 
     def create
         @comment = Comment.new(comments_params)

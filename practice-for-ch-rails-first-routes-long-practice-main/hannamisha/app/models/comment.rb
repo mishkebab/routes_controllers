@@ -17,4 +17,18 @@ class Comment < ApplicationRecord
   belongs_to :artwork,
   foreign_key: :artwork_id,
   class_name: :Artwork
+
+  def self.comments_for_user_id(user_id)
+    Comment
+        .select('comments.*')
+        .joins(:author)
+        .where("users.id = ?", user_id)
+  end
+
+  def self.comments_for_artwork_id(artwork_id)
+    Comment
+        .select('comments.*')
+        .joins(:artwork)
+        .where("artworks.id = ?", artwork_id)
+  end
 end

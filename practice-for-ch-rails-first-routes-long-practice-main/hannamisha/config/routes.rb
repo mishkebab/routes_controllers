@@ -14,14 +14,15 @@ Rails.application.routes.draw do
   # get '/users/new', to: 'users#new', as: "new_user"
   # get '/users/:id/edit', to: 'users#edit', as: "edit_user"
 
-  resources :users, only: [:create, :destroy, :index, :show, :update] 
-
-  resources :artworks, only: [:create, :destroy, :show, :update]
-
-  resources :artwork_shares, only: [:create, :destroy] 
-
-  resources :users do
+  resources :users, only: [:create, :destroy, :index, :show, :update] do
+    resources :comments, only: [:index, :create, :destroy]
     resources :artworks, only: [:index]
   end
+
+  resources :artworks, only: [:create, :destroy, :show, :update] do
+    resources :comments, only: [:index, :create, :destroy]
+  end
+
+  resources :artwork_shares, only: [:create, :destroy] 
 
 end
