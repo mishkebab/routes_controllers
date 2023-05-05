@@ -19,10 +19,13 @@ Rails.application.routes.draw do
     resources :artworks, only: [:index]
   end
 
+  get '/artworks/favorites', to: 'artworks#favorites', as: "favorites"
+
   resources :artworks, only: [:create, :destroy, :show, :update] do
     resources :comments, only: [:index, :create, :destroy]
   end
 
   resources :artwork_shares, only: [:create, :destroy] 
+  
 
 end

@@ -1,5 +1,10 @@
 class ArtworksController < ApplicationController
 
+    def favorites
+        @favorites = Artwork.favorites
+        render json: @favorites
+    end 
+
     def index
         @artworks = Artwork.artworks_for_user_id(params[:user_id])
         render json: @artworks

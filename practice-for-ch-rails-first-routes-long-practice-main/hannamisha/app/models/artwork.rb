@@ -8,6 +8,7 @@
 #  artist_id  :bigint           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  favorited  :boolean
 #
 class Artwork < ApplicationRecord
     validates :title, :artist_id, presence: true
@@ -38,6 +39,12 @@ class Artwork < ApplicationRecord
             .joins(:shared_viewers)
             .joins(:artist)
             .where("users.id = ?", user_id)
+    end
+
+    def self.favorites
+        Artwork
+            .select('artworks.*')
+            .where('artworks.favorited = ?', true)
     end
 
     has_many :likes, as: :likeable
